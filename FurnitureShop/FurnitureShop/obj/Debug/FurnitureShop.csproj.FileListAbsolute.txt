@@ -31,8 +31,9 @@ C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pag
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureCatalogPage.baml
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\ShowMeTheXAML.dll
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\FurnitureShop.csproj.AssemblyReference.cache
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureListPage.g.cs
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureListPage.baml
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureInfoPage.g.cs
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureInfoPage.baml
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\OrderFurniturePage.g.cs
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\OrderFurniturePage.baml

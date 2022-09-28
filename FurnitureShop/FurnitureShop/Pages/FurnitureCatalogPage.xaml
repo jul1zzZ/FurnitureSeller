@@ -30,11 +30,12 @@
             <TextBlock Text="Фильтрация: "/>
             <ComboBox x:Name="FiltCb" SelectionChanged="FiltCb_SelectionChanged" Width="150" Style="{StaticResource MaterialDesignComboBox}"/>
         </StackPanel>
-        
+
         <ListBox x:Name="FurnitureLb" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="750" Style="{StaticResource MaterialDesignCardsListBox}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="10" Background="{Binding GetColor}">
+                    <Button x:Name="FurnitureOrderBtn" Background="Transparent" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Click="FurnitureOrderBtn_Click" Width="700" Height="150" BorderThickness="1" BorderBrush="Transparent">
+                        <Grid Margin="10" Background="{Binding GetColor}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="450"/>
@@ -55,10 +56,11 @@
                                 <Run Text=" x "/>
                                 <Run Text="{Binding Height}"/>
                             </TextBlock>
-                            <TextBlock Text="{Binding Price,StringFormat='{}Цена: {0}'}" Margin="0 0 0 10"/>
+                            <TextBlock  Name="txtPrice" Text="{Binding Price,StringFormat='{}Цена: {0}'}" Margin="0 0 0 10"/>
                             <TextBlock Text="{Binding GetPrice, StringFormat='{}Цена с учетом скидки: {0}'}"/>
                         </StackPanel>
                     </Grid>
+                    </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

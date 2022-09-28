@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\28d4939bc64c8480c9a6aff63daf3c15.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -107,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OrderFurniturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\Auth.cs">
@@ -160,6 +167,9 @@
     <Compile Include="Pages\FurnitureListPage.xaml.cs">
       <DependentUpon>FurnitureListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderFurniturePage.xaml.cs">
+      <DependentUpon>OrderFurniturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -206,6 +216,11 @@
       <DependentUpon>FurnitureModel.edmx</DependentUpon>
       <LastGenOutput>FurnitureModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Source\krest.png" />
+    <Resource Include="Source\krestAct.png" />
+    <Resource Include="Source\palka.png" />
+    <Resource Include="Source\palkaAct.png" />
+    <Resource Include="Resources\28d4939bc64c8480c9a6aff63daf3c15.ico" />
     <Resource Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>

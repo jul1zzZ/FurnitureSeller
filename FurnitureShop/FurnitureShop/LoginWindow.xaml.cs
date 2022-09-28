@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FurnitureShop.Modules;
+using System.Windows.Media.Animation;
 
 namespace FurnitureShop
 {
@@ -24,6 +25,12 @@ namespace FurnitureShop
         {
             InitializeComponent();
             DataContext = this;
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.From = 0;
+            animation.To = 200;
+            animation.Duration = TimeSpan.FromSeconds(2);
+            animation.EasingFunction = new QuadraticEase();
+            LoginBtn.BeginAnimation(WidthProperty, animation);
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)

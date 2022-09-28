@@ -36,6 +36,8 @@ namespace FurnitureShop.Pages
             FiltCb.DisplayMemberPath = "Name";
             FiltCb.SelectedIndex = 0;
             SortCb.SelectedIndex = 0;
+
+            
         }
 
         private void Update()
@@ -161,5 +163,10 @@ namespace FurnitureShop.Pages
             }
         }
 
+        private void FurnitureOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Furniture furniture = (Furniture)(sender as Button).DataContext;
+            NavigationService.Navigate(new Pages.OrderFurniturePage(furniture));
+        }
     }
 }

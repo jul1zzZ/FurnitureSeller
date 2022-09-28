@@ -25,8 +25,10 @@ namespace FurnitureShop.Pages
         public FurnitureListPage()
         {
             InitializeComponent();
+            DataFurniture.ItemsSource = null;
             Furnitures = FurnitureSellEntities.GetContext().Furnitures.ToList();
             DataContext = this;
+            DataFurniture.ItemsSource = Furnitures;
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)

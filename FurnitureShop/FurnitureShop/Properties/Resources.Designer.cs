@@ -69,5 +69,15 @@ namespace FurnitureShop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon _28d4939bc64c8480c9a6aff63daf3c15 {
+            get {
+                object obj = ResourceManager.GetObject("_28d4939bc64c8480c9a6aff63daf3c15", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
