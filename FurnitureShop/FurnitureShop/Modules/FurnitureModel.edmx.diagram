@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="38d5d36b80f1427fbd9ddba1bbad7902" Name="Diagram1">
+        <EntityTypeShape EntityType="FurnitureSellModel.Auth" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Client" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Color" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Furniture" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.FurnitureType" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Manager" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Order" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.Post" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FurnitureSellModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Furniture_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Furniture_FurnitureType" ManuallyRouted="false" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Order_Furniture" ManuallyRouted="false" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Manager_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="FurnitureSellModel.FK_Order_Manager" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

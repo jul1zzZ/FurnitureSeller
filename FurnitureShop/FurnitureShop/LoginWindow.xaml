@@ -1,0 +1,26 @@
+﻿<Window x:Class="FurnitureShop.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:FurnitureShop"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <TextBox x:Name="LoginTb" Text="{Binding Login}" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="PassTb" Text="{Binding Password}" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Grid>
+                    <Button x:Name="LoginBtn" Click="LoginBtn_Click" Content="Войти" HorizontalAlignment="Center" Margin="0 20" Width="200" />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
