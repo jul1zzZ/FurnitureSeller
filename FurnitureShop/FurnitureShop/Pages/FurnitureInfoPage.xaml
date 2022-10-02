@@ -12,7 +12,7 @@
         FontFamily="{materialDesign:MaterialDesignFont}"
       Title="FurnitureInfoPage">
 
-    <Grid>
+    <Grid Background="#ffdadada">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

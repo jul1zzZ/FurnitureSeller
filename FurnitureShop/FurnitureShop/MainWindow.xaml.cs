@@ -33,11 +33,13 @@ namespace FurnitureShop
             {
                 BackBtn.Visibility = Visibility.Visible;
                 ListBtn.Visibility = Visibility.Collapsed;
+                AboutUsBtn.Visibility = Visibility.Collapsed;
             }
             else
             {
                 BackBtn.Visibility = Visibility.Collapsed;
                 ListBtn.Visibility = Visibility.Visible;
+                AboutUsBtn.Visibility = Visibility.Visible;
             }
         }
 
@@ -52,6 +54,11 @@ namespace FurnitureShop
         private void ListBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Pages.FurnitureListPage());
+        }
+
+        private void AboutUsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.AboutUsPage());
         }
     }
 }

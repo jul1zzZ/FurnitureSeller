@@ -48,6 +48,9 @@ namespace FurnitureShop
                 {
                     MessageBox.Show("Неправильные данные, пожалуйста, попробуйте еще раз");
                 }
+
+                AuthStorage.IsAuth = true;
+                AuthStorage.Login = auth.Login;
             }
             catch (Exception ex)
             {

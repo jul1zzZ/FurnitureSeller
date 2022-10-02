@@ -9,7 +9,7 @@
          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#ffdadada">
         <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
@@ -23,5 +23,6 @@
             <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
         <Button x:Name="BackBtn" Content="Back" Grid.Row="0" Width="70" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0" Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="BackBtn_Click"/>
         <Button x:Name="ListBtn" Content="Table" Grid.Row="0" Width="70" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="110 0" Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="ListBtn_Click"/>
+        <Button x:Name="AboutUsBtn" Content="О нас" Grid.Row="0" Width="70" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="200 0" Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="AboutUsBtn_Click"/>
     </Grid>
 </Window>

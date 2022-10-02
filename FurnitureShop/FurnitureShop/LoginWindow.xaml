@@ -18,11 +18,10 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-
                 <TextBox x:Name="LoginTb" Text="{Binding Login}" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <TextBox x:Name="PassTb" Text="{Binding Password}" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <Grid>
-                    <Button x:Name="LoginBtn" Click="LoginBtn_Click" Content="Войти" HorizontalAlignment="Center" Margin="0 20" Width="200" />
+                <Button x:Name="LoginBtn" Click="LoginBtn_Click" Content="Войти" HorizontalAlignment="Center" Margin="0 20" Width="200" />
                 </Grid>
             </StackPanel>
         </Border>
