@@ -27,6 +27,8 @@ namespace FurnitureShop
             MainFrame.Navigate(new Pages.FurnitureCatalogPage());
         }
 
+        
+
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)

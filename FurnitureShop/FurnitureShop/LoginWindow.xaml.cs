@@ -50,7 +50,7 @@ namespace FurnitureShop
                 }
 
                 AuthStorage.IsAuth = true;
-                AuthStorage.Login = auth.Login;
+                AuthStorage.Role = auth.Role;
             }
             catch (Exception ex)
             {

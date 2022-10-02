@@ -12,6 +12,7 @@
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -80,6 +81,13 @@
           <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -90,6 +98,18 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Auth_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Furniture_Color">
           <End Role="Color" Type="Self.Color" Multiplicity="1" />
           <End Role="Furniture" Type="Self.Furniture" Multiplicity="*" />
@@ -171,7 +191,12 @@
           <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auth_Role" Association="Self.FK_Auth_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
           <AssociationSet Name="FK_Furniture_Color" Association="Self.FK_Furniture_Color">
             <End Role="Color" EntitySet="Color" />
             <End Role="Furniture" EntitySet="Furniture" />
@@ -209,6 +234,8 @@
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Auth_Role" FromRole="Auth" ToRole="Role" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -289,6 +316,14 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Managers" Relationship="Self.FK_Manager_Post" FromRole="Post" ToRole="Manager" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auths" Relationship="Self.FK_Auth_Role" FromRole="Role" ToRole="Auth" />
+        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -299,6 +334,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_Auth_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Order_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
@@ -380,7 +427,12 @@
           <EntitySet Name="Managers" EntityType="Self.Manager" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Auth_Role" Association="Self.FK_Auth_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Auth" EntitySet="Auths" />
+          </AssociationSet>
           <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
             <End Role="Client" EntitySet="Clients" />
             <End Role="Order" EntitySet="Orders" />
@@ -418,6 +470,7 @@
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -491,6 +544,14 @@
             <EntityTypeMapping TypeName="FurnitureSellModel.Post">
               <MappingFragment StoreEntitySet="Post">
                 <ScalarProperty Name="PostID" ColumnName="PostID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="FurnitureSellModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>

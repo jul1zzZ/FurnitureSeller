@@ -15,8 +15,6 @@ namespace FurnitureShop.Modules
     
     public partial class FurnitureSellEntities : DbContext
     {
-        static private FurnitureSellEntities _ctx;
-        static public FurnitureSellEntities GetContext() => _ctx ?? (_ctx = new FurnitureSellEntities());
         public FurnitureSellEntities()
             : base("name=FurnitureSellEntities")
         {
@@ -26,7 +24,11 @@ namespace FurnitureShop.Modules
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        static private FurnitureSellEntities _ctx;
+        static public FurnitureSellEntities GetContext() => _ctx ?? (_ctx = new FurnitureSellEntities());
+
+
         public virtual DbSet<Auth> Auths { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
@@ -35,6 +37,7 @@ namespace FurnitureShop.Modules
         public virtual DbSet<Manager> Managers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

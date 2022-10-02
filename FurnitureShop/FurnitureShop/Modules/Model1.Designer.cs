@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\Modules\FurnitureModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\Modules\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

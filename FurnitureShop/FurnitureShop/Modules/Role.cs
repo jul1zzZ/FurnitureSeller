@@ -12,26 +12,18 @@ namespace FurnitureShop.Modules
     using System;
     using System.Collections.Generic;
     
-    public partial class Auth
+    public partial class Role
     {
-
-        public string GetRole()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
         {
-            if (RoleID == 1)
-            {
-                return "Клиент";
-            }
-            else
-            {
-                return "Администратор";
-            }
+            this.Auths = new HashSet<Auth>();
         }
-
-        public int UserID { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public int RoleID { get; set; }
     
-        public virtual Role Role { get; set; }
+        public int RoleID { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Auth> Auths { get; set; }
     }
 }

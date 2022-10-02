@@ -1,0 +1,71 @@
+﻿<Page x:Class="FurnitureShop.Pages.FurnitureCatalogUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FurnitureShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+      Title="FurnitureCatalogUserPage" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid Background="#ffdadada">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Введите текст для поиска: "/>
+                <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Margin="0 0 10 0" Width="150"/>
+                <TextBlock Text="Сортировка: "/>
+                <ComboBox x:Name="SortCb" SelectionChanged="SortCb_SelectionChanged" Margin="0 0 10 0" Width="150" Style="{StaticResource MaterialDesignComboBox}">
+                    <ComboBoxItem Content="По возрастанию"/>
+                    <ComboBoxItem Content="По убыванию"/>
+                </ComboBox>
+                <TextBlock Text="Фильтрация: "/>
+                <ComboBox x:Name="FiltCb" SelectionChanged="FiltCb_SelectionChanged" Width="150" Style="{StaticResource MaterialDesignComboBox}"/>
+            </StackPanel>
+            <ListBox x:Name="FurnitureLb" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="750" Style="{StaticResource MaterialDesignCardsListBox}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10" Background="{Binding GetColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="450"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Stretch="Uniform" Width="100" Height="100" Source="{Binding GetPhoto}"/>
+                            <StackPanel Grid.Column="1" Margin="10 0 0 10">
+                                <TextBlock FontSize="18" Margin="0 0 0 10">
+                                <Run Text="{Binding FurnitureType.Name}"/>
+                                <Run Text=" || "/>
+                                <Run Text="{Binding Name}"/>
+                                </TextBlock>
+                                <TextBlock FontSize="16" Margin=" 0 0 0 10">
+                                <Run Text="Размеры: "/>
+                                <Run Text="{Binding Lenght}"/>
+                                <Run Text=" x "/>
+                                <Run Text="{Binding Width}"/>
+                                <Run Text=" x "/>
+                                <Run Text="{Binding Height}"/>
+                                </TextBlock>
+                                <TextBlock  Name="txtPrice" Text="{Binding Price,StringFormat='{}Цена: {0}'}" Margin="0 0 0 10"/>
+                                <TextBlock Text="{Binding GetPrice, StringFormat='{}Цена с учетом скидки: {0}'}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Номер страницы: "/>
+                <TextBox x:Name="PageCount" Text="1" Width="100" TextChanged="PageCount_TextChanged" VerticalAlignment="Center"/>
+                <Button x:Name="prevPage" Content="Prev" Click="prevPage_Click" Width="60" Height="25" Margin="5 0 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                <Button x:Name="firstPage" Content="1" Click="firstPage_Click" Width="50" Height="25" Margin="5 0 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                <Button x:Name="secondPage" Content="2" Click="secondPage_Click" Width="50" Height="25" Margin="5 0 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                <Button x:Name="nextPage" Content="Next" Click="nextPage_Click" Width="60" Height="25" Margin="5 0 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+            </StackPanel>
+        </Grid>
+</Page>
