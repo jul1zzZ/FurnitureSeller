@@ -61,3 +61,7 @@ C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\Mic
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\Microsoft.Web.WebView2.Core.xml
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureCatalogUserPage.g.cs
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\Pages\FurnitureCatalogUserPage.baml
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\MainUserWindow.g.cs
+C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\obj\Debug\MainUserWindow.baml

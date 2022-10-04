@@ -11,6 +11,6 @@ namespace FurnitureShop
     internal class AuthStorage
     {
         static public bool IsAuth { get; set; } = false;
-        static public Role Role { get; set; }
+        static public int RoleID { get; set; }
     }
 }

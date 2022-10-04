@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FurnitureShop.Modules;
 using System.Windows.Media.Animation;
+using System.Windows.Navigation;
+using FurnitureShop.Pages;
+using MaterialDesignThemes.Wpf;
 
 namespace FurnitureShop
 {
@@ -40,9 +43,18 @@ namespace FurnitureShop
                 Auth auth = FurnitureSellEntities.GetContext().Auths.FirstOrDefault(u => u.Login == LoginTb.Text && u.Password == PassTb.Text);
                 if (auth != null)
                 {
+                    if (auth.RoleID == 1)
+                    {
+                        MainUserWindow mainUser = new MainUserWindow();
+                        mainUser.Show();
+                        this.Close();
+                    }
+                    else if (auth.RoleID == 2)
+                    {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
+                    }
                 }
                 else
                 {
@@ -50,7 +62,7 @@ namespace FurnitureShop
                 }
 
                 AuthStorage.IsAuth = true;
-                AuthStorage.Role = auth.Role;
+                AuthStorage.RoleID = auth.RoleID;
             }
             catch (Exception ex)
             {

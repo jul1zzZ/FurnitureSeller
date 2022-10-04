@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\witless\Desktop\FurnituleSell\FurnitureShop\FurnitureShop\App.xaml
-7-1449265141
+9167542310
 5-10549970
-251728363033
+27-128456298
 136-1015160341
-LoginWindow.xaml;MainWindow.xaml;Pages\AboutUsPage.xaml;Pages\FurnitureCatalogPage.xaml;Pages\FurnitureInfoPage.xaml;Pages\FurnitureListPage.xaml;Pages\OrderFurniturePage.xaml;
+LoginWindow.xaml;MainUserWindow.xaml;MainWindow.xaml;Pages\AboutUsPage.xaml;Pages\FurnitureCatalogPage.xaml;Pages\FurnitureCatalogUserPage.xaml;Pages\FurnitureInfoPage.xaml;Pages\FurnitureListPage.xaml;Pages\OrderFurniturePage.xaml;
 
 False
 
