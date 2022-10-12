@@ -23,9 +23,6 @@ using GMap.NET.WindowsForms;
 
 namespace FurnitureShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для AboutUsPage.xaml
-    /// </summary>
     public partial class AboutUsPage : Page
     {
         public AboutUsPage()

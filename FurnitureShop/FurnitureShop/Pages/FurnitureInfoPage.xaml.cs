@@ -18,9 +18,6 @@ using Microsoft.Win32;
 
 namespace FurnitureShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для FurnitureInfoPage.xaml
-    /// </summary>
     public partial class FurnitureInfoPage : Page
     {
         public Furniture Furniture { get; set; }

@@ -16,9 +16,6 @@ using FurnitureShop.Modules;
 
 namespace FurnitureShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для OrderFurniturePage.xaml
-    /// </summary>
     public partial class OrderFurniturePage : Page
     {
         List<Order> Orders { get; set; }

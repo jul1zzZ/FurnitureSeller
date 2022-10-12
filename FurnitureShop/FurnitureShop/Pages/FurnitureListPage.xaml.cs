@@ -16,9 +16,6 @@ using FurnitureShop.Modules;
 
 namespace FurnitureShop.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для FurnitureListPage.xaml
-    /// </summary>
     public partial class FurnitureListPage : Page
     {
         public List<Furniture> Furnitures { get; set; }
